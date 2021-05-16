@@ -13,6 +13,12 @@ class LinkedList:
         n.next_node = self.head
         self.head = n
 
+    def delete_first(self):
+        n = self.head
+        self.head = n.next_node
+        n.next_node = None
+        return n.element
+
     def print_list(self):
         n = self.head
         print("[", end='')
@@ -25,14 +31,17 @@ class LinkedList:
 def linked_list():
     ll = LinkedList()
     ll.insert_first(30)
-    ll.insert_first(4)
-    ll.insert_first(13)
-    ll.insert_first(3)
-    ll.insert_first(5)
-    ll.print_list()
-    ll.insert_first(7)
+    # ll.insert_first(4)
+    # ll.insert_first(13)
+    # ll.insert_first(3)
+    # ll.insert_first(5)
+    # ll.print_list()
+    # ll.insert_first(7)
     ll.print_list()
     # print(ll.head.element)
+    ll.delete_first()
+    ll.delete_first()
+    ll.print_list()
 
 
 def print_list_1(n):
@@ -45,7 +54,7 @@ def print_list_1(n):
 def linked_list_3():
     ll = Node(5, Node(3, Node(13, Node(4, Node(30)))))
     ll = Node(7, ll)
-    print_list(ll)
+    # print_list(ll)
 
 
 def linked_list_2():
