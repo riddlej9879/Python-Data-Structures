@@ -13,8 +13,22 @@ class LinkedList:
         n.next_node = self.head
         self.head = n
 
+    def insert_last(self, element):
+        n = Node(element)
+        m = self.head
+        if self.head is None:
+            self.head = n
+            return
+        while m.next_node is not None:
+            m = m.next_node
+        m.next_node = n
+
+    # def delete_last(self):
+
     def delete_first(self):
         n = self.head
+        if self.head is None:
+            return
         self.head = n.next_node
         n.next_node = None
         return n.element
@@ -30,17 +44,14 @@ class LinkedList:
 
 def linked_list():
     ll = LinkedList()
+    ll.delete_first()
     ll.insert_first(30)
-    # ll.insert_first(4)
-    # ll.insert_first(13)
-    # ll.insert_first(3)
-    # ll.insert_first(5)
-    # ll.print_list()
-    # ll.insert_first(7)
+    ll.insert_first(4)
+    ll.insert_first(13)
+    ll.insert_first(3)
+    ll.insert_first(5)
     ll.print_list()
-    # print(ll.head.element)
-    ll.delete_first()
-    ll.delete_first()
+    ll.insert_last(9)
     ll.print_list()
 
 
